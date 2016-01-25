@@ -2,7 +2,7 @@
   "name": "react-native-volume-slider",
   "version": "0.1.0",
   "description": "React Native VolumeView component",
-  "main": "index.js",
+  "main": "VolumeSlider.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +13,7 @@
   "keywords": [
     "react-native",
     "ios",
-    "react-component\""
+    "react-component"
   ],
   "author": "Ilja Satchok",
   "license": "MIT",

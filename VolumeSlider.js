@@ -1,21 +1,21 @@
+/* @flow */
 'use strict';
 
-var NativeMethodsMixin = require('NativeMethodsMixin');
-var PropTypes = require('ReactPropTypes');
-var React = require('React');
-var StyleSheet = require('StyleSheet');
-var View = require('View');
+import React from 'react-native';
 
-var requireNativeComponent = require('requireNativeComponent');
+const {
+  requireNativeComponent,
+  PropTypes,
+  StyleSheet,
+  Component
+} = React;
 
 type Event = Object;
 
-var VolumeSlider = React.createClass({
-  mixins: [NativeMethodsMixin],
+class VolumeSlider extends Component {
 
-  propTypes: {
-
-    /**
+  static propTypes = {
+        /**
      * The color used for the thumb.
      */
     thumbTintColor: PropTypes.string,
@@ -28,7 +28,6 @@ var VolumeSlider = React.createClass({
       width: PropTypes.number,
       height: PropTypes.number
     }),
-
 
     /**
      * The color used for the track to the left of the button. Overrides the
@@ -45,14 +44,12 @@ var VolumeSlider = React.createClass({
     /**
      * Callback continuously called while the user is dragging the slider.
      */
-    onValueChange: PropTypes.func,
-  },
+    onValueChange: PropTypes.func
+  };
 
-  getDefaultProps() {
-    return {
-      thumbSize: { width: 40, height: 40 },
-    };
-  },
+  static defaultProps = {
+    thumbSize: { width: 40, height: 40 },
+  };
 
   render() {
 
@@ -71,15 +68,16 @@ var VolumeSlider = React.createClass({
       />
     );
   }
-});
 
-var styles = StyleSheet.create({
+}
+
+const styles = StyleSheet.create({
   slider: {
     flex: 1,
     height: 40,
   },
 });
 
-var RNVolumeView = requireNativeComponent('VolumeSlider', VolumeSlider);
+const RNVolumeView = requireNativeComponent('VolumeSlider', VolumeSlider);
 
-module.exports = VolumeSlider;
+export default VolumeSlider
