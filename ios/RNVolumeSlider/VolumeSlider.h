@@ -20,4 +20,6 @@ typedef struct {
 @property (nonatomic, strong) UIColor *maximumTrackTintColor;
 @property (nonatomic, strong) UIColor *minimumTrackTintColor;
 
+-(void)setThumbImage;
+
 @end

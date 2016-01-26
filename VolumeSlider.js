@@ -64,8 +64,8 @@ class VolumeSlider extends Component {
     return (
       <RNVolumeView
         {...props}
-        style={style}
-      />
+        onValueChange={onValueChange}
+        style={style} />
     );
   }
 

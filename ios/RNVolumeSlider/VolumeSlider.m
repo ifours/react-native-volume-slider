@@ -10,6 +10,8 @@
         [_slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
       }
     }
+      
+    _thumbTintColor = [UIColor whiteColor];
   }
   return self;
 }
@@ -24,20 +26,10 @@
 
 - (void)setThumbTintColor:(UIColor*) color {
   _thumbTintColor = color;
-  [self setThumbImage:color];
+  [self setThumbImage];
 }
 
-- (void)setThumbWidth:(float) width {
-  _thumbWidth = width;
-  [self setThumbImage:_thumbTintColor];
-}
-
-- (void)setThumbHeight:(float) height {
-  _thumbHeight = height;
-  [self setThumbImage:_thumbTintColor];
-}
-
-- (void)setThumbImage:(UIColor*) thumbColor {
+- (void)setThumbImage {
   static UIImage *thumb = nil;
 
   if (_thumbWidth > 0.0f && _thumbWidth > 0.0f) {
@@ -46,7 +38,7 @@
     CGContextSaveGState(ctx);
     
     CGRect rect = CGRectMake(0, 0, _thumbWidth, _thumbHeight);
-    CGContextSetFillColorWithColor(ctx, thumbColor.CGColor);
+    CGContextSetFillColorWithColor(ctx, _thumbTintColor.CGColor);
     CGContextFillEllipseInRect(ctx, rect);
     
     CGContextRestoreGState(ctx);
