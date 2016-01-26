@@ -22,7 +22,7 @@ class VolumeSlider extends Component {
 
     /**
      * The size of the thumb area that allows moving the thumb.
-     * The default is {width: 40, height: 40}.
+     * The default is {width: 23, height: 23}.
      */
     thumbSize: PropTypes.shape({
       width: PropTypes.number,
@@ -48,7 +48,7 @@ class VolumeSlider extends Component {
   };
 
   static defaultProps = {
-    thumbSize: { width: 40, height: 40 },
+    thumbSize: { width: 23, height: 23 },
   };
 
   render() {
@@ -74,7 +74,7 @@ class VolumeSlider extends Component {
 const styles = StyleSheet.create({
   slider: {
     flex: 1,
-    height: 40,
+    height: 23,
   },
 });
 
