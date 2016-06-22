@@ -1,21 +1,18 @@
 /* @flow */
 'use strict';
 
-import React from 'react-native';
-
-const {
+import React, {
   requireNativeComponent,
-  PropTypes,
-  StyleSheet,
-  Component
-} = React;
+  StyleSheet
+} from 'react-native';
+import { Component, PropTypes } from 'react';
 
 type Event = Object;
 
 class VolumeSlider extends Component {
 
   static propTypes = {
-        /**
+    /**
      * The color used for the thumb.
      */
     thumbTintColor: PropTypes.string,
