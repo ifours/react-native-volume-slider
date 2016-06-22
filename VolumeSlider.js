@@ -1,11 +1,11 @@
 /* @flow */
 'use strict';
 
-import React, {
+import {
   requireNativeComponent,
   StyleSheet
 } from 'react-native';
-import { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 type Event = Object;
 
