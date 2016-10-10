@@ -48,6 +48,7 @@ class PlayerVolume extends React.Component {
           thumbTintColor="rgb(146,146,157)"
           minimumTrackTintColor="rgb(146,146,157)"
           maximumTrackTintColor="rgba(255,255,255, 0.1)"
+          showsRouteButton={true}
           onValueChange={this.volumeChange.bind(this)} />
       </View>
     );
@@ -83,3 +84,6 @@ The color used for the thumb.
 
 ##### `thumbImage`
 Specify an image here to use as thumb. This will be drawn to the round
+
+##### `showsRouteButton`
+Indicates whether or not to show the `routeButton` where the user can select the output target (airplay, headphones)
