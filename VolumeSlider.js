@@ -45,6 +45,11 @@ class VolumeSlider extends Component {
     maximumTrackTintColor: PropTypes.string,
 
     /**
+     * Specifies whether or not to show the route button for airplay
+     */
+    showsRouteButton: PropTypes.bool,
+
+    /**
      * Callback continuously called while the user is dragging the slider.
      */
     onValueChange: PropTypes.func
@@ -52,6 +57,7 @@ class VolumeSlider extends Component {
 
   static defaultProps = {
     thumbSize: { width: 23, height: 23 },
+    showsRouteButton: true
   };
 
   render() {
