@@ -28,6 +28,8 @@ MPVolumeView bridge to React Native (NOTE: MPVolumeView works only on physical d
 #### Volume Slider
 
 ```javascript
+import React, { Component } from 'react';
+import { View, StyleSheet } from 'react-native';
 import VolumeSlider from 'react-native-volume-slider';
 
 class PlayerVolume extends React.Component {
