@@ -26,22 +26,32 @@
 
 - (void)setThumbTintColor:(UIColor*) color {
   _thumbTintColor = color;
-  [self setThumbImage];
+  [self setThumb];
 }
 
-- (void)setThumbImage {
+- (void) setThumbImage:(UIImage *)thumbImage {
+  _thumbImage = thumbImage;
+  [self setThumb];
+}
+
+- (void)setThumb {
   static UIImage *thumb = nil;
 
   if (_thumbWidth > 0.0f && _thumbWidth > 0.0f) {
     UIGraphicsBeginImageContextWithOptions(CGSizeMake(_thumbWidth, _thumbWidth), NO, 0.0f);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     CGContextSaveGState(ctx);
-    
+
     CGRect rect = CGRectMake(0, 0, _thumbWidth, _thumbHeight);
     CGContextSetFillColorWithColor(ctx, _thumbTintColor.CGColor);
     CGContextFillEllipseInRect(ctx, rect);
-    
+
+    if ([_thumbImage CGImage] != nil || [_thumbImage CIImage] != nil) {
+      [_thumbImage drawInRect:rect];
+    }
+
     CGContextRestoreGState(ctx);
+
     thumb = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
   }

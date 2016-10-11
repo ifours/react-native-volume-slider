@@ -3,7 +3,8 @@
 
 import {
   requireNativeComponent,
-  StyleSheet
+  StyleSheet,
+  Image
 } from 'react-native';
 import React, { Component, PropTypes } from 'react';
 
@@ -16,6 +17,11 @@ class VolumeSlider extends Component {
      * The color used for the thumb.
      */
     thumbTintColor: PropTypes.string,
+
+    /**
+     * The image for the thumb
+     */
+    thumbImage: Image.propTypes.source,
 
     /**
      * The size of the thumb area that allows moving the thumb.

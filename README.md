@@ -80,3 +80,6 @@ The size of the thumb area that allows moving the thumb.
 
 ##### `thumbTintColor`
 The color used for the thumb.
+
+##### `thumbImage`
+Specify an image here to use as thumb. This will be drawn to the round
