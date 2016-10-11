@@ -29,7 +29,7 @@
   [self setThumb];
 }
 
-- (void) setThumbImage:(UIImage *)thumbImage {
+- (void)setThumbImage:(UIImage *)thumbImage {
   _thumbImage = thumbImage;
   [self setThumb];
 }
