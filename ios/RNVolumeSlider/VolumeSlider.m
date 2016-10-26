@@ -56,7 +56,7 @@
     thumb = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
   }
-  for( UIView *wnd in volumeView.subviews ) {
+  for( UIView *wnd in self.subviews ) {
       if( [wnd isKindOfClass:[UIButton class] ]) {
           UIButton *button = (UIButton*) wnd;
           UIImage *img = button.currentImage;
