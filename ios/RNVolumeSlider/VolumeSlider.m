@@ -26,6 +26,7 @@
 
 - (void)setThumbTintColor:(UIColor*) color {
   _thumbTintColor = color;
+  [self setTintColor:color];
   [self setThumb];
 }
 
@@ -55,7 +56,15 @@
     thumb = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
   }
-
+  for( UIView *wnd in volumeView.subviews ) {
+      if( [wnd isKindOfClass:[UIButton class] ]) {
+          UIButton *button = (UIButton*) wnd;
+          UIImage *img = button.currentImage;
+          UIImage *img2 = [img imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+          [volumeView setRouteButtonImage: img2 forState:UIControlStateNormal];
+          break;
+      }
+  }
   [_slider setThumbImage:thumb forState:UIControlStateNormal];
 }
 
