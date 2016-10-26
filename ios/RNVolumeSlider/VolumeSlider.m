@@ -61,7 +61,7 @@
           UIButton *button = (UIButton*) wnd;
           UIImage *img = button.currentImage;
           UIImage *img2 = [img imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-          [volumeView setRouteButtonImage: img2 forState:UIControlStateNormal];
+          [self setRouteButtonImage: img2 forState:UIControlStateNormal];
           break;
       }
   }
