@@ -9,6 +9,10 @@
         _slider = (UISlider *) current;
         [_slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
       }
+        
+      if([current isKindOfClass:[UIButton class] ]) {
+        _thumb = (UIButton *) current;
+      }
     }
       
     _thumbTintColor = [UIColor whiteColor];
@@ -56,15 +60,10 @@
     thumb = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
   }
-  for( UIView *wnd in self.subviews ) {
-      if( [wnd isKindOfClass:[UIButton class] ]) {
-          UIButton *button = (UIButton*) wnd;
-          UIImage *img = button.currentImage;
-          UIImage *img2 = [img imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-          [self setRouteButtonImage: img2 forState:UIControlStateNormal];
-          break;
-      }
-  }
+  
+  // default tintColor for the route button
+  [self setRouteButtonImage:[_thumb.currentImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+  
   [_slider setThumbImage:thumb forState:UIControlStateNormal];
 }
 

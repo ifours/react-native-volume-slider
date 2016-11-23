@@ -10,6 +10,7 @@ typedef struct {
 @interface VolumeSlider : MPVolumeView
 
 @property (nonatomic, readonly) UISlider *slider;
+@property (nonatomic, readonly) UIButton *thumb;
 
 @property (nonatomic, copy) RCTBubblingEventBlock onValueChange;
 
