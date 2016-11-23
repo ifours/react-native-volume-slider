@@ -62,19 +62,19 @@ class VolumeSlider extends Component {
 
   render() {
 
-    let onValueChange = this.props.onValueChange && ((event: Event) => {
+    const onValueChange = this.props.onValueChange && ((event: Event) => {
       this.props.onValueChange &&
         this.props.onValueChange(event.nativeEvent.value);
     });
 
-    let { style, ...props } = this.props;
-    style = [styles.slider, style];
+    const { style, ...rest } = this.props;
 
     return (
       <RNVolumeView
-        {...props}
+        {...rest}
         onValueChange={onValueChange}
-        style={style} />
+        style={[styles.slider, style]}
+      />
     );
   }
 
@@ -82,7 +82,6 @@ class VolumeSlider extends Component {
 
 const styles = StyleSheet.create({
   slider: {
-    flex: 1,
     height: 23,
   },
 });
