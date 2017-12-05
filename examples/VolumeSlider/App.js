@@ -5,12 +5,7 @@
  */
 
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import VolumeSlider from 'react-native-volume-slider';
 
 export default class VolumeSliderExample extends Component {
@@ -40,5 +35,3 @@ const styles = StyleSheet.create({
     backgroundColor: '#eee',
   },
 });
-
-AppRegistry.registerComponent('VolumeSlider', () => VolumeSliderExample);
